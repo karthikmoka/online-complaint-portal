@@ -7,15 +7,10 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
+const io = new Server(server, { cors: { origin: "*", methods: ["GET", "POST"] } });
 
-const io = new Server(server, { 
-    cors: { origin: "*", methods: ["GET", "POST"] } 
-});
-
-// Database connectivity bootstrap
 connectDB();
 
-// UNIVERSAL FIREWALL PROTECTION - ALLOWS NATIVE BROWSER ENGINES FLUIDLY
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -26,21 +21,10 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// DIRECT ROUTING RE-ALIGNMENT FOR PIPELINE BYPASS
 app.use('/api/v1/auth', require('./routes/authRoutes'));
 app.use('/api/v1/complaints', require('./routes/complaintRoutes'));
 
-io.on('connection', (socket) => {
-    socket.on('join_room', (complaintId) => socket.join(complaintId));
-    socket.on('send_message', (data) => {
-        io.to(data.complaintId).emit('receive_message', data);
-    });
-});
-
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, '0.0.0.0', () => {
-    console.log(`\n===================================================================`);
-    console.log(`🚀 [SERVER ONLINE]: Operating smoothly on target port: ${PORT}`);
-    console.log(`📢 MongoDB Setup Verified via Unified Loopback Address`);
-    console.log(`===================================================================\n`);
+    console.log(`🚀 [SERVER ONLINE]: Operating smoothly on port ${PORT}`);
 });
