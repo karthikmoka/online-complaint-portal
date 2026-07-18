@@ -1,0 +1,89 @@
+/* ==========================================================================
+   NATIONAL GRIEVANCE REDRESSAL INFRASTRUCTURE - ENTERPRISE GLOBAL LAYER STYLE
+   ========================================================================== */
+
+:root {
+  --gov-primary: #0a2540;       /* Deep Navy Corporate Authority Shield Color */
+  --gov-accent: #00d4b2;        /* Fresh Mint Active Engine Pulse Badge */
+  --gov-highlight: #0d6efd;     /* Deep Cobalt System Navigation Links */
+  --gov-neutral-dark: #1c2434;  /* Premium Slate Dark Interface Text */
+  --gov-neutral-light: #f4f7fa; /* Clean Ash White Smooth Dashboard Platform */
+  --font-corporate: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-corporate);
+  background-color: var(--gov-neutral-light);
+  color: var(--gov-neutral-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom High-Fidelity Corporate Card Layout Elements */
+.gov-card-premium {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(10, 37, 64, 0.05);
+  box-shadow: 0 10px 30px rgba(10, 37, 64, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gov-card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(10, 37, 64, 0.08);
+}
+
+/* Micro-interaction Input Fields Formatting Frame */
+.gov-input-field {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gov-neutral-dark);
+  transition: all 0.2s ease-in-out;
+}
+
+.gov-input-field:focus {
+  border-color: var(--gov-highlight);
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+  outline: none;
+}
+
+/* Modern Minimalist Layout Metrics Plate Badges Design */
+.gov-badge-docket {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background-color: rgba(13, 110, 253, 0.08);
+  color: var(--gov-highlight);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+/* Smooth Table Responsive Layout Visual Alignments */
+.gov-table-view {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+.gov-table-view tr {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+  border-radius: 8px;
+}
+
+.gov-table-view td, .gov-table-view th {
+  padding: 16px 20px;
+  border: none;
+}
+
+.gov-table-view th {
+  font-weight: 700;
+  color: #64748b;
+  text-uppercase: true;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
